@@ -3,19 +3,23 @@ import App from './App.jsx'
 import './index.css'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import redux from './Redux/redux.js'
+import booksreducer from './Reducers/booksreducer.js'
+import { BrowserRouter } from 'react-router-dom'
+import authorreducer from './Reducers/authorreducer.js'
 
 const store=configureStore({
-    reducer:{
-        Dataupdater:redux
-    }
-});
+  reducer:{
+    Bookdata:booksreducer,
+    Authordata:authorreducer
+  }
+
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+  
+  <BrowserRouter>
     <Provider store={store}>
-       <App />
+     <App />
     </Provider>
-        
-    </BrowserRouter>
+  </BrowserRouter>,
 )

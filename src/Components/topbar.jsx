@@ -1,32 +1,42 @@
-import { useNavigate } from "react-router"
+import { Link } from "react-router-dom";
 
-export default function Topbar(){
-    const navigate=useNavigate()
-
-    return(
-        <div className="navbar bg-base-100">
-            <div className="flex-1">
-                <a className="btn btn-ghost normal-case text-3xl" onClick={()=>navigate('/')}>Amazon</a>
-            </div>
-            <div className="flex-none">
-
-                <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                    <img src="https://th.bing.com/th/id/OIP.BtSHAyLolCTIvJgG5QyqewHaGL?w=190&h=180&c=7&r=0&o=5&pid=1.7" />
-                    </div>
-                </label>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li>
-                    <a className="justify-between">
-                        Profile
-                        <span className="badge">New</span>
-                    </a>
-                    </li>
-                    <li><a>Logout</a></li>
-                </ul>
-                </div>
-            </div>
-        </div>
-    )
+export default function Topbar() {
+  return (
+    <div className="navbar bg-base-100">
+      <div className="flex-1">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img src="https://th.bing.com/th/id/OIP.DVIFpyMYa9nDW96kqokA2wHaE0?w=303&h=197&c=7&r=0&o=5&pid=1.7" alt="avatar" />
+          </div>
+        </label>
+        <Link to="/" className="btn btn-ghost normal-case text-xl flex items-center">
+          The Books
+        </Link>
+      </div>
+      <div className="flex-none">
+        <ul className="menu menu-horizontal text-xl  px-1">
+          <li>
+            <Link to="/books" className=" m-1 text-center">
+              Books
+            </Link>
+          </li>
+          <li>
+            <Link to="/booksadd" className=" m-1 text-center">
+              Add Book
+            </Link>
+          </li>
+          <li>
+            <Link to="/author" className=" m-1 text-center">
+              Author
+            </Link>
+          </li>
+          <li>
+            <Link to="/authoradd" className=" m-1 text-center">
+              Add Author
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 }

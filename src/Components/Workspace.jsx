@@ -1,27 +1,17 @@
 /* eslint-disable react/prop-types */
 
-import Carousel from "./Carousel";
 import Topbar from "./topbar";
 
 
-
-export default function Workspace ({children}){
+export default function Workspace({ children }) {
     return (
-       <div className="flex flex-col w-full">
-        <div className="grid h-20 card rounded-box place-items-center m-1">
-            <Topbar/>
+      <div className="flex flex-col w-full h-screen ">
+        <div className="h-20 fixed top-0 left-0 right-0  z-50">
+          <Topbar />
         </div>
-       
-         <Carousel/>
-        
+  
+          <div className="grid m-10 p-2 gap-2">{children}</div>
 
-
-        <div className="flex flex-nowrap rounded-box place-items-center">
-            <div className="grid m-1">
-                {children}
-            </div>
-        </div>
-
-       </div>
-      );
-}
+      </div>
+    );
+  }

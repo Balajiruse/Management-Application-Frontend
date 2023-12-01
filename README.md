@@ -2,15 +2,20 @@
 
 - Hey, Hi Im Balaji
 
-- The Amazon cart App is a web appllication developed in react.js using Reacter dom and redux. it allowes users to browse a veriety of products and add them to their cart for puchaase. the application provides a simple and intutive interface for users to shop for their favorite items 
+- My The Books is a web application built using react.js, redux and react. it allow you to manage authors and books in yours book with ease
 
-Currently, two official plugins are available:
+-view a list of author names
+-view a list of books
+-click on an author to view author details
+-cilck on a book ro view vook details
+-Add new authors
+-Add new books
 
 
 
 `
 npm run dev
 `
-- Amazon
+- The Books
 
--[AMAZON](https://clever-puffpuff-f77fc2.netlify.app/)
+-[The Books]()

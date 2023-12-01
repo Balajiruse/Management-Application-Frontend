@@ -1,33 +1,39 @@
-import { Route, Routes } from 'react-router'
-import './App.css'
-
-import Mainpage from './Page/Mainpagee'
-import Cartpage from './Page/Cartpagee' 
-import { useEffect } from 'react';
-import { GetAllproducts } from './Addapi/Apii';
-import { updateinfo } from './Redux/redux';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { Getallbooks } from "./Addapi/Booksapi"
+import { updateinfo } from "./Reducers/booksreducer";
+import { Route, Routes } from "react-router-dom";
+import Mainpage from "./Page/mainpage";
+import Booksaddpage from "./Page/booksadd";
+import Bookseditpage from "./Page/booksedit";
+import Authordisplaypage from "./Page/authordisplay";
+import Authoraddpage from "./Page/authoradd";
+import Authoreditpage from "./Page/authoredit";
+import { useEffect } from "react";
+import Booksdisplaypage from "./Page/booksdisplay";
+import { Getallauthor } from "./Addapi/authorapi"
+import { updateauthorinfo } from "./Reducers/authorreducer";
 
 function App() {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    GetAllproducts()
-      .then((data) => {
-        dispatch(updateinfo(data));
-      })
-      .catch((error) => {
-        console.log("Error fetching product data:", error);
-      });
+    Getallbooks().then((data) => dispatch(updateinfo(data)));
+    Getallauthor().then((data)=>dispatch(updateauthorinfo(data)))
   }, [dispatch]);
 
   return (
     <div className="App">
       <Routes>
-        <Route exact path='/' element={<Mainpage />} />
-        <Route path='/cart/:id' element={<Cartpage  />} />  
+        <Route exact path="/" element={<Mainpage />} />
+        <Route path="/books" element={<Booksdisplaypage />} />
+        <Route path="/booksadd" element={<Booksaddpage />} />
+        <Route path="/booksedit/:id" element={<Bookseditpage />} />
+        <Route path="/author" element={<Authordisplaypage />} />
+        <Route path="/authoradd" element={<Authoraddpage />} />
+        <Route path="/authoredit/:id" element={<Authoreditpage />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
