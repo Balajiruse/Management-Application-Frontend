@@ -19,9 +19,6 @@ function App() {
         console.log("Error fetching product data:", error);
       });
   }, [dispatch]);
-  
-
-  
 
   return (
     <div className="App">
