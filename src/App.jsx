@@ -1,39 +1,28 @@
-import { useDispatch } from "react-redux";
-import { Getallbooks } from "./Addapi/Booksapi"
-import { updateinfo } from "./Reducers/booksreducer";
-import { Route, Routes } from "react-router-dom";
-import Mainpage from "./Page/mainpage";
-import Booksaddpage from "./Page/booksadd";
-import Bookseditpage from "./Page/booksedit";
-import Authordisplaypage from "./Page/authordisplay";
-import Authoraddpage from "./Page/authoradd";
-import Authoreditpage from "./Page/authoredit";
-import { useEffect } from "react";
-import Booksdisplaypage from "./Page/booksdisplay";
-import { Getallauthor } from "./Addapi/authorapi"
-import { updateauthorinfo } from "./Reducers/authorreducer";
+
+import { useEffect, useState } from 'react';
+import './App.css'
+import { GetallUsers } from './Addapi/api';
+import { Route, Routes } from 'react-router-dom';
+import Mainpage from './Page/mainpage';
+import Addpage from './Page/Addpage';
+import Editpage from './Page/Editpage';
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    Getallbooks().then((data) => dispatch(updateinfo(data)));
-    Getallauthor().then((data)=>dispatch(updateauthorinfo(data)))
-  }, [dispatch]);
-
+  const [info, setinfo] = useState();
+  useEffect(()=>{
+    GetallUsers().then((data)=>{setinfo(data);} );
+   },[])
   return (
-    <div className="App">
-      <Routes>
-        <Route exact path="/" element={<Mainpage />} />
-        <Route path="/books" element={<Booksdisplaypage />} />
-        <Route path="/booksadd" element={<Booksaddpage />} />
-        <Route path="/booksedit/:id" element={<Bookseditpage />} />
-        <Route path="/author" element={<Authordisplaypage />} />
-        <Route path="/authoradd" element={<Authoraddpage />} />
-        <Route path="/authoredit/:id" element={<Authoreditpage />} />
-      </Routes>
-    </div>
-  );
+   <div className="App">
+    <Routes>
+      <Route exact path='/' element={<Mainpage/>}/>
+      <Route path='/adduser' element={<Addpage info={info} setinfo={setinfo}/>}/>
+      <Route path='/edituser/:id' element={<Editpage info={info} setinfo={setinfo}/>}/>
+
+
+    </Routes>
+   </div>
+  )
 }
 
-export default App;
+export default App

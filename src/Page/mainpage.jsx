@@ -1,13 +1,12 @@
-import Workspace from "../Components/Workspace"
-import Dashboarddisplay from "../Components/maindisplay"
+import Display from "../Components/display";
 
 
-const Mainpage =()=>{
+
+const Mainpage=()=>{
 
     return(
-        <Workspace>
-            <Dashboarddisplay/>
-        </Workspace>
+      <Display/>
     )
 }
-export default Mainpage
+
+export default Mainpage;

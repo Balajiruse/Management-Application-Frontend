@@ -2,20 +2,20 @@
 
 - Hey, Hi Im Balaji
 
-- My The Books is a web application built using react.js, redux and react. it allow you to manage authors and books in yours book with ease
+- Create a react app For crud opertions wuth User Data
 
--view a list of author names
--view a list of books
--click on an author to view author details
--cilck on a book ro view vook details
--Add new authors
--Add new books
+
+
+- CRUD Operations
+- Add User
+- Edit User
+- Delete User
 
 
 
 `
 npm run dev
 `
-- The Books
+- Profile
 
--[The Books](https://teal-churros-191ac5.netlify.app/)
+-[Profile](https://teal-churros-191ac5.netlify.app/)

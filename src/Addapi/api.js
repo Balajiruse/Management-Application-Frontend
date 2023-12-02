@@ -1,7 +1,6 @@
+const Api="https://654ca99777200d6ba8592d4e.mockapi.io/users";
 
-const Api="https://654f830b358230d8f0cd6748.mockapi.io/books";
-
-export async function Getallbooks(){
+export async function GetallUsers(){
     const res=await fetch(Api,{
         method:"Get",
     });
@@ -9,7 +8,7 @@ export async function Getallbooks(){
     return data
 }
 
-export async function Deletebooks(id){
+export async function DeleteUsers(id){
     const res=await  fetch(`${Api}/${id}`, {
         method: "DELETE",
         headers: {
@@ -20,10 +19,10 @@ export async function Deletebooks(id){
       return data;
 }
 
-export async function Addbook(newbook){
+export async function Adduser(newuser){
     const res = await fetch(`${Api}`, {
         method: "POST",
-        body: JSON.stringify(newbook),
+        body: JSON.stringify(newuser),
         headers: {
           "Content-type": "application/json",
         },
@@ -32,7 +31,7 @@ export async function Addbook(newbook){
  return data; 
 }
 
-export async function Updatebooks(id,edited){
+export async function UpdateUsers(id,edited){
     const res = await fetch(`${Api}/${id}`, {
         method: "PUT",
         body: JSON.stringify(edited),
@@ -40,7 +39,7 @@ export async function Updatebooks(id,edited){
           "Content-type": "application/json",
         },
       });
-   const data = await res.json();
-   return data;
+      const data = await res.json();
+      return data;
     
 }
