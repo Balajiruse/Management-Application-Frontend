@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-
 import Topbar from "./topbar";
-
 
 export default function Workspace({ children }) {
     return (

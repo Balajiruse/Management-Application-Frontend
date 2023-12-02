@@ -9,6 +9,5 @@ const Mainpage =()=>{
             <Dashboarddisplay/>
         </Workspace>
     )
-
 }
 export default Mainpage
