@@ -18,4 +18,4 @@ npm run dev
 `
 - Profile
 
--[Profile](https://teal-churros-191ac5.netlify.app/)
+-[Profile](https://sparkly-semolina-15b3b3.netlify.app/)
