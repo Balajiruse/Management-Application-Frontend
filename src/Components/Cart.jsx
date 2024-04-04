@@ -109,9 +109,9 @@ export default function Cart(){
             },500)
           },
           prefill: {
-            name:"Fabian Raja Fernando",
-            email:"fabiraja21052002@gmail.com",
-            contact:"9790873004"
+            name:"Balaji",
+            email:"bk35037@gmail.com",
+            contact:"9003642216"
           },
           notes:{
             address:"Razorpay Corporate office"
