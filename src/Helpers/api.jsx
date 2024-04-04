@@ -1,3 +1,3 @@
 
 //backend api is exported 
-export const API="https://inventorymanagementsystemandbilling.onrender.com"
+export const API="https://management-application.onrender.com/"
