@@ -33,24 +33,13 @@ function App() {
     setProduct(data);
   }, 1000);
 
-  return (
-    <div className="app">
-      <div className="cart-comp">
-        <h1>CART {inCart}</h1>
-      </div>
-
-      <div className="cart-area">
-        {product?.map((prod, idx) => (
-          <ProductCard
-            key={idx}
-            productImg={prod.productImage}
-            productName={prod.productName}
-            inCart={inCart}
-            setInCart={setInCart}
-          />
-        ))}
-      </div>
+  return(
+    <div className='app'>
+    <TopBar/>
+    <Sidebar/>
+    <Main/>
     </div>
+    
   );
 }
 
