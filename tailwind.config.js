@@ -6,10 +6,12 @@ export default {
   ],
   theme: {
     extend: {},
+    screens:{
+      'sm': '600px',
+      'lg': '456px'
+    }
   },
-  daisyui: {
-    themes: ["light", "dark", "buisness"],
-  },
+  
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
 }

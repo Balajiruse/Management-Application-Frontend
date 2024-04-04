@@ -1,33 +1,124 @@
-.cart-comp{
-    display: flex;
-    justify-content: end;
-   }
-   .cart-area{
-     display: flex;
-     flex-wrap: wrap;
-     gap: 2rem;
-     margin: 15px;
-   }
-   
-   .card-component{
-      display: flex ;
-      flex-direction: column;
-      width: 250px;
-      height: 250px;
-      border : 1px solid black;
-      border-radius : 5px;
-      justify-content: stretch;
-      padding : 5px;
-   }
-   
-   img{
-     width: 250px;
-     height: 130px;
-     object-fit:contain;
-   }
-   
-   button{
-     padding : 7px;
-     width: max-content;
-     margin: 0 auto;
-   }
+
+/* for background animation */
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(192, 153, 102);
+    overflow: hidden;
+}
+.background li {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #637fb9;
+    color: transparent;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+}
+undefined
+.background li:nth-child(0) {
+    animation-delay: 0s;
+    left: 58vw;
+    top: 44vh;
+}
+
+.background li:nth-child(1) {
+    animation-delay: 2s;
+    left: 37vw;
+    top: 66vh;
+}
+
+.background li:nth-child(2) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 36vh;
+    border-color: #7a9ce2;
+}
+
+.background li:nth-child(3) {
+    animation-delay: 6s;
+    left: 78vw;
+    top: 8vh;
+}
+
+.background li:nth-child(4) {
+    animation-delay: 8s;
+    left: 55vw;
+    top: 60vh;
+}
+
+.background li:nth-child(5) {
+    animation-delay: 10s;
+    left: 1vw;
+    top: 88vh;
+    border-color: #7a9ce2;
+}
+
+.background li:nth-child(6) {
+    animation-delay: 12s;
+    left: 98vw;
+    top: 24vh;
+    border-color: #7a9ce2;
+}
+
+.background li:nth-child(7) {
+    animation-delay: 14s;
+    left: 32vw;
+    top: 96vh;
+    border-color: #7a9ce2;
+}
+
+.background li:nth-child(8) {
+    animation-delay: 16s;
+    left: 19vw;
+    top: 20vh;
+    border-color: #16181c;
+}
+/* css used for classes */
+.background-set{
+    background: rgb(192, 153, 102);
+}
+hr{
+    border:10px solid rgb(130, 126, 126);
+}
+.content-center-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.visibility-section{
+    z-index: 50;
+}
+/* for custom scrollbar */
+::-webkit-scrollbar{
+    width:8px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(78, 75, 71);
+}
+::-webkit-scrollbar-thumb{
+    background-color:#191a1c;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #222e6b;
+}
